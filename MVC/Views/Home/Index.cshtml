@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="row">
+        <div class="col-md-6 center-block buscador ">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#zona" data-toggle="tab">Zona</a>
+                </li>
+                <li>
+                    <a href="#nombre" data-toggle="tab">Nombre</a>
+                </li>
+                <li>
+                    <a href="#comida" data-toggle="tab">Plato</a>
+                </li>
+                <li class="pull-right mensaje">
+                    <a href="#" data-tooggle="tab">Reserva tu restaurante</a>
+                </li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade  active in" id="zona">
+                    <br>
+                    @using (Html.BeginForm("About", "Home", FormMethod.Get))
+                    {
+                        <div class="col-md-6 form-group">
+                            <label for="">Dónde</label>
+                            @Html.DropDownList("idzona", (IEnumerable<SelectListItem>)ViewBag.zonas, "Select", new { @class = "form-control" })
+                            <br />
+                            <label for="">Fecha</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="">Ambiente</label>
+                            @Html.DropDownList("idambientes", (IEnumerable<SelectListItem>)ViewBag.ambiente, "Select", new { @class = "form-control" })
+                            <br />
+                            <label for="">Tipo de Cocina</label>
+                            @Html.DropDownList("idcocina", (IEnumerable<SelectListItem>)ViewBag.cocina, "Select", new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">&nbsp;</label>
+                            <p>
+                                <a href="#" class="btn btn-success">Buscar Restaurante</a>
+                            </p>
+                        </div>
+                    }
+                </div>
+                <div class="tab-pane fade" id="nombre">
+                    <br>
+                    @using (Html.BeginForm())
+                    {
+                        <div class="form-group col-md-8">
+                            <label for="nombreRestaurante">Nombre del Restaurante</label>
+                            <p>@Html.TextBox("buscar", null, new { id = "autocomplete", @class = "form-control" })</p>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">&nbsp;</label>
+                            <p><input type="submit" class="btn btn-success" value="Buscar Restaurante"></p>
+                        </div>
+
+                    }
+                </div>
+                <div class="tab-pane fade" id="comida">
+                    <br>
+                    @using (Html.BeginForm("About", "Home", FormMethod.Get))
+                    {
+                        <div class="col-md-8 form-group">
+                            <label for="">Nombre de Plato</label>
+                            <p>@Html.TextBox("plato", null, new { id = "idplato", @class = "form-control" })</p>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">&nbsp;</label>
+                            <p><input type="submit" class="btn btn-success" value="Buscar Restaurante"></p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@section Scripts {
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#autocomplete').autocomplete({
+                source: '@Url.Action("CompleteRestaurant")'
+            });
+
+
+
+        })
+
+    </script>
+}

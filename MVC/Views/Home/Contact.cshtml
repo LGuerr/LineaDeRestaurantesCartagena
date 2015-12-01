@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "LogIn";
+}
+<div class="jumbotron"
+    <div class="center-block row">
+        <div class="col-md-4 center-block login">
+            <div class="well bs-component buscador">
+
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    <fieldset>
+                        <legend>Login</legend>
+                        <div class="form-group">
+                            <label for="" class="col-md-2 control-label">Email</label>
+                            <div class="col-lg-10">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                            <div class="col-lg-10">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-grouup">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="checkbox">
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    <div class="col-md-offset-0">
+                                        @Html.LabelFor(m => m.RememberMe)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <input type="submit" class="btn btn-primary pull-right " value="Ingresar">
+                            </div>
+
+                        </div>
+                    </fieldset>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

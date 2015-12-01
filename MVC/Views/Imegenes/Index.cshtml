@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MVC.Models.Imegenes>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.logo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.foto_perfil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.foto1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.foto2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.foto3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Restaurantes.nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.logo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.foto_perfil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.foto1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.foto2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.foto3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Restaurantes.nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.nit }) |
+            @Html.ActionLink("Details", "Details", new { id=item.nit }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.nit })
+        </td>
+    </tr>
+}
+
+</table>

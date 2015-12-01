@@ -1,0 +1,88 @@
+﻿@model IEnumerable<MVC.Models.Restaurantes>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.slogan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.puntuacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tenedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Imegenes.logo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zona1.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cocina.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.slogan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.puntuacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tenedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Imegenes.logo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zona1.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cocina.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.nit }) |
+            @Html.ActionLink("Details", "Details", new { id=item.nit }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.nit })
+        </td>
+    </tr>
+}
+
+</table>

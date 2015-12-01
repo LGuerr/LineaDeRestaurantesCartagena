@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Cartage Gourmet</title>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index", "Home" )">
+                    <img src="@Url.Content("~/img/logo.png")" alt="">
+                    <span>Cartagena Gourmet</span>
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    @Html.Partial("_LoginPartial")
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bootstrap core CSS
+    <div class="navbar navbar-inverse navbar-fixed-top">
+    @Html.ActionLink("Cartagena Gourmet", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    -->
+
+    <div class="jumbotron">
+        @RenderBody()
+    </div>
+
+
+    @section Scripts {
+
+        <script type="text/javascript">
+            var currPic = 1;
+            var totPics = 3;
+            var keepTime;
+            function setupPicChange() {
+                keepTime = setTimeout("changePic()", 5000);
+            } function changePic() {
+                currPic++;
+                if (currPic > totPics)
+                    currPic = 1;
+                document.getElementById("picture").src = "pic" + currPic + ".jpg"; setupPicChange();
+            } </script>
+    }
+
+    @Scripts.Render("~/bundles/jqueryui")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

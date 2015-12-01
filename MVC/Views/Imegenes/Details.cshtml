@@ -1,0 +1,67 @@
+﻿@model MVC.Models.Imegenes
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Imegenes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.foto_perfil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.foto_perfil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.foto1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.foto1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.foto2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.foto2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.foto3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.foto3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Restaurantes.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Restaurantes.nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.nit }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

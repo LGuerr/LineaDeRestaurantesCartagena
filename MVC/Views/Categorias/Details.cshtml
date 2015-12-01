@@ -1,0 +1,51 @@
+﻿@model MVC.Models.Categorias
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Categorias</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto.img_foto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto.img_foto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Restaurantes.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Restaurantes.nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_categoria }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

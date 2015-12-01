@@ -1,0 +1,52 @@
+﻿body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  overflow-x: hidden;
+}
+.center-block {
+  overflow: hidden !important;
+  float: none;
+  margin: 0 auto;
+}
+hr.dashed {
+  width: 100%;
+  border: 1px dashed #eee;
+}
+.navbar-default {
+  background: #008cba !important;
+  border-bottom: 5px solid #0079a1 !important;
+}
+.navbar-default li a:active,
+.navbar-default li a:hover,
+.navbar-default li a:visited {
+  background: #006687 !important;
+}
+.navbar-brand img {
+  margin-top: -5px;
+  display: inline-block;
+}
+.jumbotron {
+  width: 100%;
+  min-height: 480px;
+  background: url("../img/fondo.jpg") center center no-repeat;
+}
+.jumbotron .buscador {
+  background: rgba(255,255,255,0.8);
+  padding: 1em;
+}
+.jumbotron .buscador .mensaje a {
+  background: none !important;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #777;
+}
+.jumbotron .buscador p .btn-success {
+  border-bottom: 3px solid #007e4b;
+  border-radius: 1px;
+}
+.login {
+  margin-top: 5em !important;
+}
+
+
+

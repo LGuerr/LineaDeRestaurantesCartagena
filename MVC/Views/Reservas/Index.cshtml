@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MVC.Models.Reservas>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.facha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mesas.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Restaurantes.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salas.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.facha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mesas.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Restaurantes.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salas.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_reserva }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_reserva }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_reserva })
+        </td>
+    </tr>
+}
+
+</table>

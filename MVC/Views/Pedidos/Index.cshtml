@@ -1,0 +1,76 @@
+﻿@model IEnumerable<MVC.Models.Pedidos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subtotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Restaurantes.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Servicios.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subtotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Restaurantes.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Servicios.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_pedido }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_pedido }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_pedido })
+        </td>
+    </tr>
+}
+
+</table>

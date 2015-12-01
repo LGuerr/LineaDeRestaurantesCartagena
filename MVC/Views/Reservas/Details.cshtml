@@ -1,0 +1,67 @@
+﻿@model MVC.Models.Reservas
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reservas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.facha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.facha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mesas.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mesas.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Restaurantes.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Restaurantes.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salas.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salas.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_reserva }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
